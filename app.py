@@ -1,9 +1,14 @@
 from flask import Flask, render_template, request,jsonify
 import requests
 
+import os
+
 app = Flask(__name__)
 
-API_KEY = "814cea0ba3d06aaec9de39b2ba6669f4"
+API_KEY = os.environ.get("WEATHER_API_KEY")
+
+
+app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
